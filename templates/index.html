@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Upcoming Events</h1>
+    <div>
+        <p>
+            {% for event in events %}
+                <b>{{event.name}}</b>
+                <br>
+                <i>{{ event.date.strftime("%b %d %Y") }}</i>
+                <hr>
+            {% endfor %}
+        </p>
+    </div>
+{% endblock  %}
