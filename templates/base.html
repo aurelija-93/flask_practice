@@ -1,12 +1,13 @@
 <html>
     <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <title>{{ title }}</title>
     </head>
     <body>
         <nav>
         <ul>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/planner">Event Planner</a></li>
+            <li><a href="/events">EVENTS</a></li>
+            <li><a href="/planner">EVENT PLANNER</a></li>
         </ul>
         </nav>
         {% block content %}
