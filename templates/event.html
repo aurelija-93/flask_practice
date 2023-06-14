@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-    
+<h1>Event details</h1>
+<div class="event">
+        <h2>{{ event.name }}</h2>
+        <br>
+        <i>When: {{ event.date.strftime("%b %d %Y") }}</i>
+        <br>
+        <h3>Capacity: {{ event.guest_number }} people</h3>
+        <h3>Location: {{ event.location }}</h3>
+        <h3>Further details:</h3>
+        <p>
+            {{ event.description }}
+        </p>
+        {% if event.recurring: %}
+            <h3>This is a recurring event</h3>
+        {% endif %}
+</div>
 {% endblock  %}

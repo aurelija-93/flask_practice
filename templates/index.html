@@ -5,11 +5,15 @@
     <div>
         {% for event in events %}
         <div class="event">
-            <h2>{{event.name}}</h2>
+            <h2>{{ event.name }}</h2>
             <br>
             <i>{{ event.date.strftime("%b %d %Y") }}</i>
             <br>
-            <a href="/events/{{events.index(event)}}">View event</a>
+            {% if event.recurring: %}
+            This is a recurring event
+            <br>
+            {% endif %}
+            <a href="/events/{{events.index(event)}}">View details</a>
             <hr>
         </div>
         {% endfor %}
