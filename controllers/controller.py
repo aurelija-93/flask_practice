@@ -15,8 +15,7 @@ def planner():
 @app.route("/events", methods=["POST"])
 def add_event():
     event_date = request.form["date"]
-    split_date = event_date.split("-")
-    formatted_date = datetime.date(int(split_date[0]), int(split_date[1]), int(split_date[2]))
+    formatted_date = datetime.datetime.strptime(event_date, "%Y-%m-%d")
     event_name = request.form["name"]
     guest_number = request.form["guests"]
     event_location = request.form["location"]
